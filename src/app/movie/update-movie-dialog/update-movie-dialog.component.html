@@ -1,0 +1,73 @@
+<div class="dialog--title">
+	<mat-icon>{{ dialogIconName }}</mat-icon>
+	<h2>{{ dialogTitle }}</h2>
+</div>
+
+<div class="dialog--content">
+	<form [formGroup]="movieForm" (ngSubmit)="submitForm()">
+		<mat-form-field appearance="outline">
+			<mat-label>Title</mat-label>
+			<input
+				type="text"
+				matInput
+				formControlName="title"
+				placeholder="Enter movie title"
+        autocomplete="off"
+				required
+			/>
+			<mat-error *ngIf="title.invalid && title.hasError('required')"
+				>Movie title is required</mat-error
+			>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline">
+			<mat-label>Episodes</mat-label>
+      <span matSuffix>total episodes</span>
+			<input
+				type="number"
+        autocomplete="off"
+				matInput
+				formControlName="episodes"
+				placeholder="Enter total episodes"
+			/>
+			<mat-error *ngIf="episodes.invalid && episodes.hasError('min')"
+				>Are you kidding me ?</mat-error
+			>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline">
+			<mat-label>Info url</mat-label>
+			<input
+				type="text"
+        autocomplete="off"
+				matInput
+				formControlName="info_url"
+				placeholder="Enter info url"
+			/>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline">
+			<mat-label>Watch url</mat-label>
+			<input
+				type="text"
+        autocomplete="off"
+				matInput
+				formControlName="watch_url"
+				placeholder="Enter watch url"
+			/>
+		</mat-form-field>
+
+		<div class="form--action-group">
+			<button
+				(click)="dialogRef.close()"
+				type="button"
+				mat-button
+			>
+				Cancel
+			</button>
+			<button [disabled]="movieForm.invalid" type="submit" mat-raised-button color="primary">
+				<mat-icon>send</mat-icon>&nbsp;Submit
+			</button>
+		</div>
+	</form>
+</div>

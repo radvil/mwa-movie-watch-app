@@ -1,0 +1,60 @@
+.fx-container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+mat-card {
+	max-width: 777px;
+	overflow-x: auto;
+	padding: 0;
+	border-radius: 1rem;
+}
+[mat-raised-button] {
+	margin: 1rem !important;
+	font-weight: bold;
+}
+.social-icon {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: 5px solid darkgrey;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+table {
+	width: 100%;
+	font-size: 2rem;
+	th {
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+	td {
+		font-size: 15px;
+	}
+	&.tr-4 {
+		tr {
+			height: 4rem;
+			white-space: nowrap;
+		}
+	}
+	&.td-p-1 {
+		th,
+		td {
+			padding: 0 1rem;
+		}
+	}
+}
+.hint {
+	padding: 1rem;
+	color: darkgray;
+	font-weight: bold;
+}

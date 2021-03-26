@@ -1,0 +1,17 @@
+<div class="app--shell">
+	<div class="app-title dfx aic jcc">
+		<mat-icon color="warn">play_circle_filled</mat-icon>
+		<h1>{{ appTitle }}</h1>
+	</div>
+
+	<main>
+		<app-watch-list-table
+			[dataSource]="moviesDataSource"
+			[columns]="displayedColumns"
+			(deleteMovie)="deleteMovie($event)"
+      (dialogOnAdd)="openMovieDialog()"
+      (dialogOnEdit)="openMovieDialog($event)"
+		>
+		</app-watch-list-table>
+	</main>
+</div>
